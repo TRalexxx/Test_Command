@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
@@ -37,6 +38,12 @@ namespace WindowsFormsApp1
 
             btn = new Button();
             btn.Text = "Generate";
+            btn.Click += (e, s) =>
+            {
+                var x = new Random();
+                btn.Text = $"{x.Next(100)}";
+
+            };
 
             this.Controls.Add(btn);
         }
