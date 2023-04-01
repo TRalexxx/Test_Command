@@ -1,4 +1,7 @@
-﻿namespace WindowsFormsApp1
+﻿using System;
+using System.Windows.Forms;
+
+namespace WindowsFormsApp1
 {
     partial class Form1
     {
@@ -32,8 +35,19 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Text = "Form1";
-        }
 
+            btn = new Button();
+            btn.Text = "Generate";
+            btn.Click += (e, s) =>
+            {
+                var x = new Random();
+                btn.Text = $"{x.Next(100)}";
+
+            };
+
+            this.Controls.Add(btn);
+        }
+        Button btn;
         #endregion
     }
 }
